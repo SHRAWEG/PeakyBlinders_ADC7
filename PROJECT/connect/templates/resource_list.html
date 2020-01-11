@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+    <h4>Resources Lists</h4>
+    <table class = "table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Week</th>
+                <th>Pdf</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for resource in resources %}
+            <tr>
+                <td>{{ resource.title }}</td>
+                <td>{{ resource.week }}</td>
+                <td>
+                    <a href="/connect{{ resource.pdf.url }}" class="btn btn-primary btn-sm" target="_blank" download>
+                        Download 
+                    </a>
+                    <a href="/connect{{ resource.pdf.url }}" class="btn btn-primary btn-sm" target="_blank">
+                        View
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}
