@@ -5,8 +5,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('resources/', resource_list),
-    path('resources/upload', upload_resource),
+    path('', resource_list),
+    path('uploads/', upload_resource),
 ]
 
 if settings.DEBUG:
